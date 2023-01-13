@@ -28,9 +28,10 @@ module.exports = (sequelize, Sequelize) => {
         onDelete: "cascade",
       });
 
-      //  this.belongsTo(models.Board, {
-      //  foreignKey: "boardIdx",
-      // });
+      this.belongsTo(models.Board, {
+        foreignKey: "boardIdx",
+        onDelete: "cascade",
+      });
     }
   }
 

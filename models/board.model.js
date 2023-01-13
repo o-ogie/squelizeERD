@@ -42,15 +42,16 @@ module.exports = (sequelize, Sequelize) => {
     }
 
     static associate(models) {
-      // this.belongsTo(models.User,{
-      //     foreignKey:'userid'
-      // })
-
-      this.hasMany(models.Hashtag, {
-        foreignKey: "boardIdx",
-        constraints: true,
+      this.belongsTo(models.User, {
+        foreignKey: "userid",
         onDelete: "cascade",
       });
+
+      // this.hasMany(models.Hashtag, {
+      //   foreignKey: "boardIdx",
+      //   constraints: true,
+      //   onDelete: "cascade",
+      // });
     }
   }
   Board.initailize();
