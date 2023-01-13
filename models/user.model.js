@@ -51,13 +51,12 @@ module.exports = (sequelize, Sequelize) => {
       );
     }
 
-    // static associate(models) {
-    //   this.hasMany(models.Board, {
-    //     foreignKey: "userid",
-    //   });
-    // }
-
     static associate(models) {
+      this.hasMany(models.Board, {
+        foreignKey: "userid",
+        onDelete: "cascade",
+      });
+
       this.hasMany(models.Comment, {
         foreignKey: "userid",
         onDelete: "cascade",
