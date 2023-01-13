@@ -1,5 +1,3 @@
-Sort
-
 /*
     CREATE TABLE sort(
         hashnum INT PRIMARY KEY AUTO_INCREMENT,

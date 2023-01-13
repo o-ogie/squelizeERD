@@ -1,5 +1,3 @@
-Hashtag
-
 /*
     CREATE TABLE hashtag(
         hashnum foriegnkey,
