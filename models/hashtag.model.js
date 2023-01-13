@@ -1,5 +1,3 @@
-Hashtag
-
 /*
     CREATE TABLE hashtag(
         hashnum foriegnkey,
@@ -8,30 +6,28 @@ Hashtag
     )
 */
 
-
-
-module.exports = (sequelize, Sequelize)=> {
-    class Hashtag extends Sequelize.Model {
-        static initialize(){
-            return super.init({
-             
-            },{
-                sequelize
-            })
+module.exports = (sequelize, Sequelize) => {
+  class Hashtag extends Sequelize.Model {
+    static initialize() {
+      return super.init(
+        {},
+        {
+          sequelize,
         }
-
-        static associate(models){
-            this.belongsTo(models.Sort,{
-                foreignKey:'hashNum',
-                foreignKey:'contentHash'
-            })
-
-            this.belongsTo(models.Board,{
-                foreignKey:'boardIdx'
-            })
-        }
-
+      );
     }
-    Hashtag.initialize()
-    return Hashtag
-}
+
+    static associate(models) {
+      this.belongsTo(models.Sort, {
+        foreignKey: "hashNum",
+        foreignKey: "contentHash",
+      });
+
+      this.belongsTo(models.Board, {
+        foreignKey: "boardIdx",
+      });
+    }
+  }
+  Hashtag.initialize();
+  return Hashtag;
+};
