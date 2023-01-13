@@ -1,5 +1,3 @@
-Board
-
 /*
 CREATE TABLE board(
     boardIdx INT PRIMARY KEY AUTO_INCREMENT,
